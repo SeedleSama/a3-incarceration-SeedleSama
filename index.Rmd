@@ -1,0 +1,48 @@
+---
+title: "Incarceration Visualizations"
+author: "Yukunpeng Huang"
+date: "2021/2/27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("analysis.R")
+```
+
+## Data Description
+
+The dataset is downloaded from the website [https://github.com/vera-institute/incarceration-trends#data](https://github.com/vera-institute/incarceration-trends#data), there are `r nobs` observations, the range of years the data set covers is `r smallest_year` and `r largest_year`.
+
+The total number of people incarcerated in `r largest_year` of the data set is `r total_pop`, there are `r total_jail` in jail, and there are `r total_prison` in prison.
+
+## Incarceration Trend Over Time
+```{r echo=F, fig.width=8}
+incarceration_over_time_plot
+```
+
+The number of incarerated people had increased from 1980,  but after 2010, the population decreased, and the incarerated population of white and black have a similar trend,  both are larger than other races.
+
+## Highest Black Incarceration Rates
+
+```{r echo=F, fig.width=8}
+top_10_black_plot
+```
+
+The state WI has the highest rate of black incarcerated, and the state OK has the second highest rate of black incarcerated, among all the 10 states, the rate of black incarcerated is higher than the total rate of incarcerated.
+
+## Racial Incarceration Discrepancy Map
+
+```{r echo=F, fig.width=8}
+map_plot
+```
+
+As we can see from the map, most of the county has a ratio lower than 10, Lincoln has the highest ratio of black vs white in incarceration rates in WA.
+
+
+## My Own Visualization
+```{r echo=F, fig.width=8}
+part5_plot
+```
+
+The plot suggests that female has a lower incarcerate rate than the male in the four states, and state AL has a higher incarcerate rate than the other four state.
